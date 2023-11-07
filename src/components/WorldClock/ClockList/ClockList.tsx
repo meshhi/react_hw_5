@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ClockItem from './ClockItem/ClockItem'
 import { IClockItem } from './ClockItem/ClockItem'
+import s from './ClockList.module.css'
 
 interface IClockListProps {
   clockList: IClockItem[],
@@ -13,7 +14,7 @@ export class ClockList extends Component<IClockListProps> {
   }
   render() {
     return (
-      <div className='world-clock__clock-list'>
+      <div className={s.world_clock__clock_list}>
         {this.props.clockList.map(clockItem =>
           <ClockItem
             key={clockItem.id}

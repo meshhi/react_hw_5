@@ -45,7 +45,7 @@ export default class ClockItem extends Component<IClockItemProps, IClockItemStat
 
     render() {
         return (
-            <div>
+            <div className={s.clock_item}>
                 <h2>{this.props.clockItem.title}</h2>
                 <button onClick={() => this.props.deleteClockItem(this.props.clockItem.id)}>X</button>
                 <div>{this.state.time.format()}</div>
