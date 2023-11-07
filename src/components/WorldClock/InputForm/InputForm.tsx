@@ -1,9 +1,10 @@
 import React, { Component, ReactElement } from 'react'
 import s from './InputForm.module.css'
-import { IClockItemProps } from '../ClockList/ClockItem/ClockItem';
+import { IClockItem } from '../ClockList/ClockItem/ClockItem';
+import { v4 as uuidv4 } from "uuid";
 
 interface IInputFormProps {
-    addNewClock: (clockConfig : IClockItemProps) => void;
+    addNewClock: (clockConfig : IClockItem) => void;
 }
 
 interface IInputFormState {
@@ -23,9 +24,10 @@ export default class InputForm extends Component<IInputFormProps, IInputFormStat
     handleSubmit = (e : React.SyntheticEvent) => {
         e.preventDefault();
         const title = this.titleRef.current?.value;
-        const offset = this.offsetRef.current?.value;
-        if (!title || !offset) return;
+        const offset = Number(this.offsetRef.current?.value);
+        if ((!title || !offset) && offset !== 0) return;
         this.props.addNewClock({
+            id: uuidv4(),
             title: title, 
             offset: offset
         });
@@ -45,7 +47,7 @@ export default class InputForm extends Component<IInputFormProps, IInputFormStat
                 </label>
                 <label htmlFor="">
                     Временная зона
-                    <input type="text" name="" id="clock-time-zone" ref={this.offsetRef}/>
+                    <input type="number" min="0" max="12" name="" id="clock-time-zone" ref={this.offsetRef}/>
                 </label>
                 <button type='submit'>Добавить</button>
             </form>
