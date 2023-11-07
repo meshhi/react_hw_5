@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import s from './ClockItem.module.css';
 
-interface IClockItemProps {
+export interface IClockItemProps {
     title: string,
-    offset: number
+    offset: number | string
 }
 
 interface IClockItemState {

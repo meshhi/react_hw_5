@@ -1,0 +1,5 @@
+.world_clock__input_form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
