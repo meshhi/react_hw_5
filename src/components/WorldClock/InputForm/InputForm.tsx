@@ -25,7 +25,7 @@ export default class InputForm extends Component<IInputFormProps, IInputFormStat
         e.preventDefault();
         const title = this.titleRef.current?.value;
         const offset = Number(this.offsetRef.current?.value);
-        if ((!title || !offset) && offset !== 0) return;
+        if (!title) return;
         this.props.addNewClock({
             id: uuidv4(),
             title: title, 

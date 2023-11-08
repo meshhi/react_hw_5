@@ -2,6 +2,7 @@ import React from 'react';
 import { ClockList } from './ClockList/ClockList';
 import InputForm from './InputForm/InputForm';
 import { IClockItem } from './ClockList/ClockItem/ClockItem';
+import s from './WorldClock.module.css';
 
 interface IWorldClockProps {
 
@@ -33,7 +34,7 @@ export class WorldClock extends React.Component<IWorldClockProps, IWorldClockSta
 
     render() {
         return (
-            <div className='world-clock'>
+            <div className={s.world_clock}>
                 <InputForm addNewClock={this.addNewClock}></InputForm>
                 <ClockList clockList={this.state.clockList} deleteClock={this.deleteClock}></ClockList>
             </div>

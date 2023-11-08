@@ -1,0 +1,7 @@
+.world_clock__clock_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

@@ -38,3 +38,21 @@
     transform-origin: bottom center;
     transform: rotate(0deg);
 }
+
+.clock_item {
+    width: 20%;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.clock_item__close_btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
