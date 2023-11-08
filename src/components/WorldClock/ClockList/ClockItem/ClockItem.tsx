@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import s from './ClockItem.module.css';
-import moment, * as moments from 'moment';
+import moment, { Moment } from 'moment';
 
 export interface IClockItem {
     id: number | string,
@@ -14,7 +14,7 @@ interface IClockItemProps {
 }
 
 interface IClockItemState {
-    time: moments.Moment,
+    time: Moment,
 }
 
 export default class ClockItem extends Component<IClockItemProps, IClockItemState> {
