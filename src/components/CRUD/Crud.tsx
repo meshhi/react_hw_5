@@ -9,9 +9,9 @@ const BASE_PORT = 7070;
 const API_URL = `${BASE_URL}:${BASE_PORT}`;
 
 export default function Crud() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<ICard[]>([]);
 
-  const addCard = async(e : SyntheticEvent, cardData) => {
+  const addCard = async(e : SyntheticEvent, cardData? : string) => {
     try {
       e.preventDefault();
       const newCard: ICard = {

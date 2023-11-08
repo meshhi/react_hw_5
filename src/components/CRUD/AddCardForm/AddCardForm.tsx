@@ -1,11 +1,11 @@
 import React, { SyntheticEvent, useRef } from "react"
 
 interface IAddCardFormProps {
-    addNewCard: (e : SyntheticEvent, cardData) => void
+    addNewCard: (e : SyntheticEvent, cardData? : string) => void
 }
 
 const AddCardForm : React.FC<IAddCardFormProps> = ({addNewCard}) => {
-    const titleRef = useRef(null);
+    const titleRef : React.RefObject<HTMLInputElement> = useRef(null);
     return(
         <form onSubmit={(e : SyntheticEvent) => addNewCard(e, titleRef.current?.value)}>
             <input type="text" ref={titleRef}/>

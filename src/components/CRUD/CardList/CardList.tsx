@@ -9,7 +9,7 @@ interface ICardListProps {
 
 const CardList : React.FC<ICardListProps> = ({cards, deleteCard}) =>  {
   return (
-    <div>
+    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "1rem"}}>
         {cards.map(card => <Card key={card.id} cardData={card} deleteCard={deleteCard}></Card>)}
     </div>
   )

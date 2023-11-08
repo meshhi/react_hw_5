@@ -50,3 +50,9 @@
     align-items: center;
     position: relative;
 }
+
+.clock_item__close_btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

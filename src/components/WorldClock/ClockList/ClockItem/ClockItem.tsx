@@ -47,7 +47,7 @@ export default class ClockItem extends Component<IClockItemProps, IClockItemStat
         return (
             <div className={s.clock_item}>
                 <h2>{this.props.clockItem.title}</h2>
-                <button onClick={() => this.props.deleteClockItem(this.props.clockItem.id)}>X</button>
+                <button className={s.clock_item__close_btn} onClick={() => this.props.deleteClockItem(this.props.clockItem.id)}>X</button>
                 <div>{this.state.time.format()}</div>
                 <div className={s.clock}>
                     <div className={s.clock_arrow__seconds} style={{transform: `rotate(${this.state.time.seconds()/60*360}deg)`}}></div>
