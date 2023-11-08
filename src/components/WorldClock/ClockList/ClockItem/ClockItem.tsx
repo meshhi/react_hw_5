@@ -19,18 +19,16 @@ interface IClockItemState {
 
 export default class ClockItem extends Component<IClockItemProps, IClockItemState> {
     initClockTimer: () => void;
-    timerID?: number | null;
+    timerID?: number;
     constructor(props: IClockItemProps) {
         super(props);
-        this.timerID = null;
+        this.timerID;
         this.state = {
             time: moment().utcOffset('GMT-00:00').add(this.props.clockItem.offset, 'hours'),
         }
         this.initClockTimer = () => {
             this.timerID = setInterval(() => this.setState(prevState => {
-                const newState = {...prevState};
-                newState.time.add(1, 'seconds');
-                return newState;
+                return {time: prevState.time.add(1, 'seconds')};
             }), 1000);
         }
     };
@@ -40,7 +38,7 @@ export default class ClockItem extends Component<IClockItemProps, IClockItemStat
     }
 
     componentWillUnmount(): void {
-        this.timerID = null;
+        clearInterval(this.timerID);
     }
 
     render() {

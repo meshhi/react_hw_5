@@ -47,7 +47,7 @@ export default class InputForm extends Component<IInputFormProps, IInputFormStat
                 </label>
                 <label htmlFor="">
                     Временная зона
-                    <input type="number" min="0" max="12" name="" id="clock-time-zone" ref={this.offsetRef}/>
+                    <input type="number" min="-12" max="12" name="" id="clock-time-zone" ref={this.offsetRef}/>
                 </label>
                 <button type='submit'>Добавить</button>
             </form>
